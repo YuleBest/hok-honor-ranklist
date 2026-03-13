@@ -31,8 +31,10 @@ export default defineConfigWithVueTs(
     settings: {
       'import/core-modules': ['vue-router/auto-routes'],
     },
-    globals: {
-      definePage: 'readonly',
+    languageOptions: {
+      globals: {
+        definePage: 'readonly',
+      },
     },
   },
 )

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "cf-page-dev": "wrangler pages dev ./dist",
     "preview": "vite preview",
+    "preview-cf": "run-s build cf-page-dev",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "run-s lint:*",
@@ -15,10 +17,12 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "axios": "^1.13.6",
     "vue": "^3.5.29",
     "vue-router": "^5.0.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260313.1",
     "@tsconfig/node24": "^24.0.4",
     "@types/node": "^24.11.0",
     "@vitejs/plugin-vue": "^6.0.4",
@@ -35,7 +39,8 @@
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-vue-devtools": "^8.0.6",
-    "vue-tsc": "^3.2.5"
+    "vue-tsc": "^3.2.5",
+    "wrangler": "^4.72.0"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
