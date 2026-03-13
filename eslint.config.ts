@@ -23,4 +23,16 @@ export default defineConfigWithVueTs(
   ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
 
   skipFormatting,
+
+  {
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+    settings: {
+      'import/core-modules': ['vue-router/auto-routes'],
+    },
+    globals: {
+      definePage: 'readonly',
+    },
+  },
 )
